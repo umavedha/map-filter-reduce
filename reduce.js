@@ -75,3 +75,66 @@ let occurrance=arrString.reduce((a,b)=>{
 },{})
 console.log('5.Number of times each string appears in the array:',occurrance)
 console.log('------------------------------------------');
+
+
+// 6. Write a function that takes an array of objects with a name and age property and returns the average age of all
+// the objects. Use the reduce method to accomplish this.
+
+let people=[{id:1,name:'uma',age:20},
+            {id:2,name:'marudhu',age:20},
+            {id:1,name:'yc',age:20},
+            ]
+let averageOfAge= people.reduce((a,b,index,array)=>{
+    a=a+b.age
+   if(index===array.length-1){
+     return  a=a/array.length
+   }
+   else{
+   return a
+   }
+},0)
+console.log('6.Average age of all the objects:',averageOfAge)
+console.log('------------------------------------------');
+
+
+// 7. Write a function that takes an array of strings and returns the longest string in the array. 
+// Use the reduce method to accomplish this.
+let strings=['mahaaaaaaaaaaaaa','uma','marudhu','entertainment','antidisestablishmentarianism']
+let longestString=strings.reduce((a,b)=>{
+    if(b.length > a.length){
+        a=b
+    }
+    return a
+},'')
+console.log('7.Longest String in the array:',longestString)
+console.log('------------------------------------------');
+
+
+// 8. Write a function that takes an array of objects with a name and salary property and returns
+//  the total salary of all the employees. Use the reduce method to accomplish this.
+
+let employeeSalaryList=[{id:1,employeeName:'Table',salary:10000},
+                      {id:2,employeeName:'Chair',salary:10000},
+                      {id:3,employeeName:'Sofa',salary:30000},
+                      {id:4,employeeName:'TV Unit',salary:40000},
+                      {id:5,employeeName:'Wardrobe',salary:10000}
+                    ];
+let totalSalary= employeeSalaryList.reduce((a,b)=>{
+    return a + b.salary
+},0)
+console.log('8.Total salary of all the employees:',totalSalary)
+console.log('------------------------------------------');
+
+
+// 9. Write a function that takes an array of numbers and returns the product of all the numbers. 
+// Use the reduce method to accomplish this.
+
+let num=[1,2,4];
+let productOfAllNumbers=num.reduce((a,b)=>{
+    return a*b
+},1)
+console.log('9.Product of all the numbers:',productOfAllNumbers);
+console.log('------------------------------------------');
+
+// 10. Write a function that takes an array of objects with a category property and returns an object where the keys are the categories, and
+// the values are the total cost of all the objects with that category. Use the reduce method to accomplish this.
